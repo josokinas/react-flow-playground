@@ -27,7 +27,7 @@
     "release": "HUSKY=0 standard-version"
   },
   "dependencies": {
-    "gatsby": "^3.8.1",
+    "gatsby": "^3.11.0",
     "gatsby-plugin-react-helmet": "^4.10.0",
     "gatsby-plugin-sass": "^4.10.0",
     "react": "^17.0.2",
