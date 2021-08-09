@@ -1,2 +1,0 @@
-(self.webpackChunk_josokinas_gatsby_template=self.webpackChunk_josokinas_gatsby_template||[]).push([[230],{768:function(t,e,a){"use strict";a.r(e),a.d(e,{default:function(){return u}});var n=a(294),r=a(444);var s=function(){return(0,r.K2)("3159585216").site.siteMetadata};var u=function(){var t=s().title;return n.createElement(n.Fragment,null,t)}}}]);
-//# sourceMappingURL=component---src-pages-index-jsx-62f73841ac7f9b303279.js.map
