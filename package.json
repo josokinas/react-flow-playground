@@ -1,0 +1,54 @@
+{
+  "name": "@josokinas/gatsby-template",
+  "version": "0.0.0",
+  "description": "A template for Gatsby project.",
+  "author": "Julius Osokinas",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/josokinas/gatsby-template.git"
+  },
+  "homepage": "https://github.com/josokinas/gatsby-template",
+  "engines": {
+    "node": ">= 14",
+    "npm": ">= 7"
+  },
+  "scripts": {
+    "postinstall": "husky install",
+    "clean": "gatsby clean",
+    "develop": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "lint": "concurrently npm:lint:*",
+    "lint:commit": "commitlint --from origin/main --to HEAD --verbose",
+    "lint:es": "eslint . --ignore-path .gitignore --max-warnings 0",
+    "lint:style": "stylelint '**/*.{,s}css' --ignore-path .gitignore --max-warnings 0",
+    "lint:prettier": "prettier . --check --ignore-path .gitignore",
+    "release": "HUSKY=0 standard-version"
+  },
+  "dependencies": {
+    "gatsby": "^3.8.1",
+    "gatsby-plugin-react-helmet": "^4.10.0",
+    "gatsby-plugin-sass": "^4.10.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-helmet": "^6.1.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^13.1.0",
+    "@commitlint/config-conventional": "^13.1.0",
+    "babel-eslint": "^10.1.0",
+    "commitizen": "^4.2.4",
+    "concurrently": "^6.2.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^7.32.0",
+    "eslint-plugin-react": "^7.24.0",
+    "husky": "^7.0.1",
+    "lint-staged": "^11.1.1",
+    "prettier": "^2.3.2",
+    "sass": "^1.37.0",
+    "standard-version": "^9.3.1",
+    "stylelint": "^13.13.1",
+    "stylelint-config-sass-guidelines": "^8.0.0"
+  }
+}
