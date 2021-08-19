@@ -6,13 +6,13 @@ export const style = {
   out: 'rgba(25, 212, 75)',
 };
 
-const Start = memo(({ id, data }) => {
+const Start = memo(({ data }) => {
   return (
     <Base title={data.title}>
       <div className="node-handle--container node-handle--container--right">
-        Output 1
+        Output
         <Handle
-          id={`${id}-out`}
+          id="out"
           type="source"
           position="right"
           isConnectable

@@ -2,13 +2,13 @@ import React, { memo } from 'react';
 import { Handle } from 'react-flow-renderer';
 import Base from './base';
 
-const Finish = memo(({ id, data }) => {
+const Finish = memo(({ data }) => {
   return (
     <Base title={data.title}>
       <div className="node-handle--container node-handle--container--left">
-        Input 1
+        Input
         <Handle
-          id={`${id}-in`}
+          id="in"
           type="target"
           position="left"
           isConnectable

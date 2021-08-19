@@ -1,0 +1,67 @@
+{
+  "tasks": [
+    {
+      "name": "ocr_autofill",
+      "type": "ASYNC",
+      "output": "https://onfido-api-spec-location/ocr-autofill-api-spec",
+      "requires": ["upload_document"],
+      "settings": {
+        "title": "OCR/Autofill"
+      }
+    },
+    {
+      "name": "aamva",
+      "type": "SYNC",
+      "requires": ["upload_document"],
+      "output": {
+        "uuid": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "status": {
+          "type": "string",
+          "oneOf": ["E", "DNE"]
+        }
+      }
+    },
+    {
+      "name": "upload_document",
+      "type": "INTERACTIVE",
+      "output": "https://onfido-api-spec-location/upload-document-api-spec",
+      "settings": {
+        "timeout": 300
+      }
+    },
+    {
+      "name": "upload_selfie",
+      "type": "INTERACTIVE",
+      "output": "https://onfido-api-spec-location/upload-photo-api-spec"
+    },
+    {
+      "name": "collect_address",
+      "type": "INTERACTIVE",
+      "output": "https://onfido-api-spec-location/post-address-api-spec"
+    },
+    {
+      "name": "facial_similarity_report",
+      "type": "ASYNC",
+      "requires": ["upload_selfie"],
+      "output": "https://onfido-api-spec-location/facial-similarity-api-spec"
+    },
+    {
+      "name": "document_report",
+      "type": "ASYNC",
+      "requires": ["upload_document"],
+      "output": "https://onfido-api-spec-location/document-report-api-spec"
+    },
+    {
+      "name": "watchlist_report",
+      "type": "ASYNC",
+      "output": "https://onfido-api-spec-location/document-report-api-spec",
+      "settings": {
+        "timeout": 86400,
+        "retries": 1
+      }
+    }
+  ]
+}

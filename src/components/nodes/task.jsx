@@ -7,27 +7,25 @@ export const style = {
   out_2: 'rgba(15, 34, 212)',
 };
 
-const Task = memo(({ id, data }) => {
+const Task = memo(({ data }) => {
   return (
     <Base title={data.title}>
       <div className="node-task--body">
-        <div>
-          <div className="node-handle--container node-handle--container--left">
-            Input 1
-            <Handle
-              id={`${id}-in`}
-              type="target"
-              position="left"
-              isConnectable
-              style={{ backgroundColor: data.style?.['in'] }}
-            />
-          </div>
+        <div className="node-handle--container node-handle--container--left">
+          Input
+          <Handle
+            id="in"
+            type="target"
+            position="left"
+            isConnectable
+            style={{ backgroundColor: data.style?.['in'] }}
+          />
         </div>
         <div>
           <div className="node-handle--container node-handle--container--right">
             Output 1
             <Handle
-              id={`${id}-out_1`}
+              id="out_1"
               type="source"
               position="right"
               isConnectable
@@ -37,7 +35,7 @@ const Task = memo(({ id, data }) => {
           <div className="node-handle--container node-handle--container--right">
             Output 2
             <Handle
-              id={`${id}-out_2`}
+              id="out_2"
               type="source"
               position="right"
               isConnectable
