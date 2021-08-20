@@ -1,0 +1,169 @@
+{
+  "workflow": {
+    "nodes": [
+      {
+        "id": 101,
+        "type": "TASK",
+        "task": "upload_document",
+        "nextNode": [
+          {
+            "id": 102,
+            "visualSettings": {
+              "id": "101-102"
+            }
+          }
+        ],
+        "visualSettings": {
+          "position": {
+            "x": 300,
+            "y": 200
+          }
+        }
+      },
+      {
+        "id": 102,
+        "type": "CONDITION",
+        "rules": [
+          {
+            "id": "is_driving_license",
+            "expression": {
+              "operation": "=",
+              "operands": [
+                {
+                  "type": "variable",
+                  "value": "type"
+                },
+                {
+                  "type": "string",
+                  "value": "driving_license"
+                }
+              ]
+            },
+            "nextNode": [
+              {
+                "id": 103,
+                "visualSettings": {
+                  "id": "102-103"
+                }
+              }
+            ],
+            "visualSettings": {
+              "position": {
+                "x": 880,
+                "y": 400
+              }
+            }
+          }
+        ],
+        "defaultNode": {
+          "id": 105,
+          "visualSettings": {
+            "id": "102-105",
+            "position": {
+              "x": 880,
+              "y": 450
+            }
+          }
+        },
+        "visualSettings": {
+          "position": {
+            "x": 600,
+            "y": 400
+          }
+        }
+      },
+      {
+        "id": 103,
+        "type": "CONDITION",
+        "rules": [
+          {
+            "id": "state_ca",
+            "expression": {
+              "operation": "OR",
+              "operands": [
+                {
+                  "operation": "=",
+                  "operands": [
+                    {
+                      "type": "variable",
+                      "value": "state"
+                    },
+                    {
+                      "type": "string",
+                      "value": "CA"
+                    }
+                  ]
+                },
+                {
+                  "operation": "=",
+                  "operands": [
+                    {
+                      "type": "variable",
+                      "value": "state"
+                    },
+                    {
+                      "type": "string",
+                      "value": "NY"
+                    }
+                  ]
+                }
+              ]
+            },
+            "nextNode": [
+              {
+                "id": 104,
+                "visualSettings": {
+                  "id": "103-104"
+                }
+              }
+            ],
+            "visualSettings": {
+              "position": {
+                "x": 1380,
+                "y": 550
+              }
+            }
+          }
+        ],
+        "defaultNode": {
+          "id": 105,
+          "visualSettings": {
+            "id": "103-105",
+            "position": {
+              "x": 1380,
+              "y": 600
+            }
+          }
+        },
+        "visualSettings": {
+          "position": {
+            "x": 1100,
+            "y": 550
+          }
+        }
+      },
+      {
+        "id": 104,
+        "type": "FINAL",
+        "task": "pass_applicant",
+        "visualSettings": {
+          "position": {
+            "x": 1750,
+            "y": 450
+          }
+        }
+      },
+      {
+        "id": 105,
+        "type": "FINAL",
+        "task": "consider_applicant",
+        "visualSettings": {
+          "position": {
+            "x": 1620,
+            "y": 700
+          }
+        }
+      }
+    ]
+  }
+}

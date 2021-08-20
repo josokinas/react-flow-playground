@@ -43,6 +43,14 @@ body,
   border-radius: 8px;
   min-width: 240px;
   position: relative;
+
+  &.selected {
+    border: 2px solid #e60000;
+  }
+
+  &.small {
+    min-width: 100px;
+  }
 }
 
 .node-base--header {
@@ -64,6 +72,10 @@ body,
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
   }
+
+  &.v2 {
+    padding: 0;
+  }
 }
 
 .node-task--body,
@@ -72,6 +84,14 @@ body,
 .node-async-task--body {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+}
+
+.node-interactive-task--body,
+.node-sync-task--body,
+.node-async-task--body,
+.node-condition--body {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
 }
 
 .node-interactive-task--body {
@@ -85,6 +105,8 @@ body,
 
 .node-condition--body {
   background-color: #efde18;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
 
 .node-condition-expression--container {
@@ -92,7 +114,15 @@ body,
   font-size: 12px;
 }
 
+.node-rule--body {
+  background-color: #52527a;
+  color: #f0f0f5;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+}
+
 .node-handle--container {
+  min-height: 16px;
   position: relative;
 
   & + & {

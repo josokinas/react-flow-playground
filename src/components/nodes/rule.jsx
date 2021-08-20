@@ -2,12 +2,11 @@ import React, { memo } from 'react';
 import { Handle } from 'react-flow-renderer';
 import Base from './base';
 
-const InteractiveTask = memo(({ data }) => {
+const Rule = memo(({ data }) => {
   return (
-    <Base title={data.title} selected={data.selected} designV={data.designV}>
-      <div className="node-interactive-task--body">
+    <Base small>
+      <div className="node-rule--body">
         <div className="node-handle--container node-handle--container--left">
-          Input
           <Handle
             id="in"
             type="target"
@@ -16,8 +15,8 @@ const InteractiveTask = memo(({ data }) => {
             style={{ backgroundColor: data.style?.['in'] }}
           />
         </div>
+        <div>{data.content}</div>
         <div className="node-handle--container node-handle--container--right">
-          Output
           <Handle id="out" type="source" position="right" isConnectable />
         </div>
       </div>
@@ -25,4 +24,4 @@ const InteractiveTask = memo(({ data }) => {
   );
 });
 
-export default InteractiveTask;
+export default Rule;

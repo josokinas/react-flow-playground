@@ -8,7 +8,7 @@ export const style = {
 
 const Start = memo(({ data }) => {
   return (
-    <Base title={data.title}>
+    <Base title={data.title} selected={data.selected} designV={data.designV}>
       <div className="node-handle--container node-handle--container--right">
         Output
         <Handle

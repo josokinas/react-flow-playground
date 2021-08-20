@@ -9,7 +9,7 @@ import Condition from '../components/nodes/condition';
 import Finish from '../components/nodes/finish';
 
 import tasksData from '../data/tasks.json';
-import workflowData from '../data/workflow.json';
+import workflowData from '../data/workflow_1.json';
 
 const nodeTypes = {
   start: Start,

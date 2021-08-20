@@ -2,9 +2,9 @@ import React, { memo } from 'react';
 import { Handle } from 'react-flow-renderer';
 import Base from './base';
 
-const AsyncTask = memo(({ data }) => {
+const AsyncTask = memo(({ data, designV }) => {
   return (
-    <Base title={data.title}>
+    <Base title={data.title} selected={data.selected} designV={designV}>
       <div className="node-async-task--body">
         <div className="node-handle--container node-handle--container--left">
           Input

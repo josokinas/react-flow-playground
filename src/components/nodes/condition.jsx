@@ -11,7 +11,7 @@ const parseOperands = (operation, operands) =>
     })
     .join(` ${operation} `);
 
-const Expression = memo(({ operation, operands }) => {
+export const Expression = memo(({ operation, operands }) => {
   return (
     <div className="node-condition-expression--container">
       {parseOperands(operation, operands)}
@@ -21,7 +21,7 @@ const Expression = memo(({ operation, operands }) => {
 
 const Condition = memo(({ id, data }) => {
   return (
-    <Base>
+    <Base selected={data.selected} designV={data.designV}>
       <div className="node-condition--body">
         <div className="node-handle--container node-handle--container--left">
           Input
@@ -40,10 +40,12 @@ const Condition = memo(({ id, data }) => {
                 key={`${id}=rule.id`}
                 className="node-handle--container node-handle--container--right"
               >
-                <Expression
-                  operation={rule.expression.operation}
-                  operands={rule.expression.operands}
-                />
+                {!data.hideOutput && (
+                  <Expression
+                    operation={rule.expression.operation}
+                    operands={rule.expression.operands}
+                  />
+                )}
                 <Handle
                   id={rule.id}
                   type="source"
@@ -53,7 +55,7 @@ const Condition = memo(({ id, data }) => {
               </div>
             ))}
           <div className="node-handle--container node-handle--container--right">
-            No
+            {!data.hideOutput && 'No'}
             <Handle id="no" type="source" position="right" isConnectable />
           </div>
         </div>
